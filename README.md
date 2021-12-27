@@ -1,4 +1,7 @@
-# Neovim configuration forked from "LunarVim/Neovim-from-scratch"
+# Neovim configuration
+
+forked from "LunarVim/Neovim-from-scratch".
+
 
 ## Try out this config
 
@@ -9,9 +12,9 @@ Make sure to remove or move your current `nvim` directory
 git clone https://github.com/volkangulen/nvim.git ~/.config/nvim
 ```
 
-Run `nvim` and wait for the plugins to be installed 
+Run `nvim` and wait for the plugins to be installed
 
-**NOTE** (You will notice treesitter pulling in a bunch of parsers the next time you open Neovim) 
+**NOTE** (You will notice treesitter pulling in a bunch of parsers the next time you open Neovim)
 
 ## Get healthy
 
