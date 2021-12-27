@@ -39,6 +39,12 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
+-- Move to the first non blank character in line
+keymap("n", "0", "^", opts)
+
+-- Spell check
+keymap("n", "<F6>", ":setlocal spell! spellang=en_US<CR>", opts)
+
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
