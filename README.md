@@ -12,6 +12,23 @@ Make sure to remove or move your current `nvim` directory
 git clone https://github.com/volkangulen/nvim.git ~/.config/nvim
 ```
 
+**REQUIREMENTS**
+
+Ripgrep is required for Telescope live_grep
+Installation:
+-  **Debian/Ubuntu/Mint**
+    ```
+    $ curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb
+    $ sudo dpkg -i ripgrep_13.0.0_amd64.deb
+    ```
+
+-  **Arch Linux**
+    ```
+    $ pacman -S ripgrep
+    ```
+\
+&nbsp;
+
 Run `nvim` and wait for the plugins to be installed
 
 **NOTE** (You will notice treesitter pulling in a bunch of parsers the next time you open Neovim)
