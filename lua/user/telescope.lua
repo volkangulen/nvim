@@ -3,12 +3,18 @@ if not status_ok then
   return
 end
 
+local has_dap, dap = pcall(require, 'dap')
+if not has_dap then
+  error('This plugins requires mfussenegger/nvim-dap')
+end
+
 local actions = require "telescope.actions"
 
+telescope.load_extension('dap')
 telescope.setup {
   defaults = {
 
-    file_ignore_patterns = {"node_modules"},
+    file_ignore_patterns = {"node_modules","dist/**"},
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "smart" },
@@ -88,6 +94,7 @@ telescope.setup {
     -- builtin picker
   },
   extensions = {
+    dap
     -- Your extension configuration goes here:
     -- extension_name = {
     --   extension_config_key = value,

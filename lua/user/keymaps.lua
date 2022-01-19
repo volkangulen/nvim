@@ -1,6 +1,6 @@
 local opts = { noremap = true, silent = true }
 
-local term_opts = { silent = true }
+-- local term_opts = { silent = true }
 
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
@@ -28,8 +28,8 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+keymap("n", "<C-Left>", ":vertical resize +2<CR>", opts)
+keymap("n", "<C-Right>", ":vertical resize -2<CR>", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
@@ -44,6 +44,10 @@ keymap("n", "0", "^", opts)
 
 -- Spell check
 keymap("n", "<F6>", ":setlocal spell! spellang=en_US<CR>", opts)
+
+-- Parens match
+keymap("n", "<Tab>", "%", opts)
+keymap("v", "<Tab>", "%", opts)
 
 -- Insert --
 -- Press jk fast to enter
@@ -65,6 +69,10 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+
+keymap("n", ";;", "~", opts)
+keymap("v", ";;", "~", opts)
+keymap("x", ";;", "~", opts)
 
 -- Terminal --
 -- Better terminal navigation
