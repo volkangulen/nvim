@@ -1,6 +1,5 @@
 local status_ok, dap = pcall(require, "dap")
 if not status_ok then
-  print("test")
 	return
 end
 
@@ -15,7 +14,7 @@ dap.configurations.javascript = {
 		type = "node2",
 		request = "launch",
 		cwd = vim.fn.getcwd(),
-		program = "${cwd}/external-api/src/main.ts",
+		program = "${cwd}/api/src/main.ts",
 		sourceMaps = true,
 		protocol = "inspector",
 		console = "integratedTerminal",
@@ -30,6 +29,8 @@ dap.configurations.javascript = {
 }
 dap.set_log_level("INFO")
 dap.defaults.fallback.terminal_win_cmd = "80vsplit new"
+
+vim.fn.sign_define("DapBreakpointCondition", { text = "🛑", texthl = "", linehl = "", numhl = "" })
 vim.fn.sign_define("DapBreakpoint", { text = "🟥", texthl = "", linehl = "", numhl = "" })
 vim.fn.sign_define("DapBreakpointRejected", { text = "🟦", texthl = "", linehl = "", numhl = "" })
 vim.fn.sign_define("DapStopped", { text = "⭐️", texthl = "", linehl = "", numhl = "" })

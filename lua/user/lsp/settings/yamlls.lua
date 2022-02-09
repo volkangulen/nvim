@@ -7,7 +7,8 @@ return {
 					"serverless.yml",
 					"serverless.yaml",
 				},
-				url = "https://raw.githubusercontent.com/awslabs/goformation/v5.2.11/schema/sam.schema.json",
+				-- url = "https://raw.githubusercontent.com/awslabs/goformation/v5.2.11/schema/sam.schema.json",
+				url = "https://raw.githubusercontent.com/lalcebo/json-schema/master/serverless/reference.json",
 			},
 		},
 		yaml = {

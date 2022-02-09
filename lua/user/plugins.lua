@@ -64,7 +64,7 @@ return packer.startup(function(use)
 	-- Colorschemes
 	-- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
 	use("lunarvim/darkplus.nvim")
-  use("kaicataldo/material.vim")
+	use("kaicataldo/material.vim")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
@@ -83,6 +83,7 @@ return packer.startup(function(use)
 	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
 	use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
+	use("lervag/vimtex") --latex
 
 	-- Debugger
 	use("mfussenegger/nvim-dap")
@@ -100,7 +101,9 @@ return packer.startup(function(use)
 
 	-- Git
 	use("lewis6991/gitsigns.nvim")
-  use("psliwka/vim-smoothie")
+	use("github/copilot.vim")
+	-- Smooth scrolling
+	use("psliwka/vim-smoothie")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
