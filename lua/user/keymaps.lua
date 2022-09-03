@@ -39,9 +39,19 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
+-- Move to the first non blank character in line
+keymap("n", "0", "^", opts)
+
+-- Spell check
+keymap("n", "<F6>", ":setlocal spell! spellang=en_US<CR>", opts)
+
+-- Parens match
+keymap("n", "<Tab>", "%", opts)
+keymap("v", "<Tab>", "%", opts)
+
 -- Insert --
--- Press jk fast to exit insert mode 
-keymap("i", "jk", "<ESC>", opts)
+-- Press kj fast to exit insert mode
+keymap("i", "kj", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
@@ -60,10 +70,14 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
+--Case change
+keymap("n", ";;", "~", opts)
+keymap("v", ";;", "~", opts)
+keymap("x", ";;", "~", opts)
+
 -- Terminal --
 -- Better terminal navigation
 -- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 -- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
-
