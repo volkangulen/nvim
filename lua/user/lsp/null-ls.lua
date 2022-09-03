@@ -12,17 +12,24 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		formatting.prettier.with({
-			extra_args = {
-				"--single-quote",
-				"--jsx-single-quote",
-				"--tab-width 2",
-				"--print-width 100",
-				"--trailing-comma all",
-			},
+			extra_args = { "--config-path", vim.fn.getcwd() .. "/.prettierrc" },
+			-- extra_args = {
+			-- 	"--single-quote",
+			-- 	-- "--jsx-single-quote",
+			-- 	"--tab-width 2",
+			-- 	"--print-width 100",
+			-- 	"--trailing-comma all",
+			-- },
 		}),
-		formatting.black.with({ extra_args = { "--fast" } }),
+		formatting.black.with({
+			extra_args = { "--fast", "--config-path", vim.fn.getcwd() .. "/.pyproject.toml" },
+		}),
 		formatting.stylua,
-		diagnostics.flake8,
+		formatting.prettier,
+		formatting.google_java_format,
+		diagnostics.flake8.with({
+			extra_args = { "--config-path", vim.fn.getcwd() .. "/.flake8" },
+		}),
 	},
 	-- on_attach = function(client)
 	-- 	if client.resolved_capabilities.document_formatting then

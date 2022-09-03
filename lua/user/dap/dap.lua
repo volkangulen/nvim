@@ -14,7 +14,7 @@ dap.configurations.javascript = {
 		type = "node2",
 		request = "launch",
 		cwd = vim.fn.getcwd(),
-		program = "${cwd}/api/src/main.ts",
+		program = "${cwd}/src/main.ts",
 		sourceMaps = true,
 		protocol = "inspector",
 		console = "integratedTerminal",
@@ -27,13 +27,13 @@ dap.configurations.javascript = {
 		processId = require("dap.utils").pick_process,
 	},
 }
-dap.set_log_level("INFO")
+dap.set_log_level("TRACE")
 dap.defaults.fallback.terminal_win_cmd = "80vsplit new"
 
-vim.fn.sign_define("DapBreakpointCondition", { text = "🛑", texthl = "", linehl = "", numhl = "" })
-vim.fn.sign_define("DapBreakpoint", { text = "🟥", texthl = "", linehl = "", numhl = "" })
-vim.fn.sign_define("DapBreakpointRejected", { text = "🟦", texthl = "", linehl = "", numhl = "" })
-vim.fn.sign_define("DapStopped", { text = "⭐️", texthl = "", linehl = "", numhl = "" })
+vim.fn.sign_define("DapBreakpointCondition", { text = "??", texthl = "", linehl = "", numhl = "" })
+vim.fn.sign_define("DapBreakpoint", { text = "??", texthl = "", linehl = "", numhl = "" })
+vim.fn.sign_define("DapBreakpointRejected", { text = "??", texthl = "", linehl = "", numhl = "" })
+vim.fn.sign_define("DapStopped", { text = "??", texthl = "", linehl = "visual", numhl = "" })
 
 local function debugJest(testName, filename)
 	print("starting " .. testName .. " in " .. filename)
@@ -70,7 +70,8 @@ local function attachToRemote()
 		address = "127.0.0.1",
 		port = 9229,
 		localRoot = vim.fn.getcwd(),
-		remoteRoot = "/home/vcap/app",
+		-- remoteRoot = "/home/vcap/app",
+		remoteRoot = "${cwd}/src/main.ts",
 		sourceMaps = true,
 		protocol = "inspector",
 		skipFiles = { "<node_internals>/**/*.js" },

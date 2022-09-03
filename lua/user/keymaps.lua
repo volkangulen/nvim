@@ -50,8 +50,8 @@ keymap("n", "<Tab>", "%", opts)
 keymap("v", "<Tab>", "%", opts)
 
 -- Insert --
--- Press jk fast to enter
-keymap("i", "jk", "<ESC>", opts)
+-- Press kj fast to exit insert mode
+keymap("i", "kj", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
@@ -70,6 +70,7 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
+--Case change
 keymap("n", ";;", "~", opts)
 keymap("v", ";;", "~", opts)
 keymap("x", ";;", "~", opts)
