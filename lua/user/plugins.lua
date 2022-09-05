@@ -57,19 +57,25 @@ return packer.startup(function(use)
 	use({ "lewis6991/impatient.nvim", commit = "969f2c5c90457612c09cf2a13fee1adaa986d350" })
 	use({ "lukas-reineke/indent-blankline.nvim", commit = "6177a59552e35dfb69e1493fd68194e673dc3ee2" })
 	use({ "goolord/alpha-nvim", commit = "ef27a59e5b4d7b1c2fe1950da3fe5b1c5f3b4c94" })
-	use("folke/which-key.nvim")
+	use({ "folke/which-key.nvim", commit = "f11260251ad942ba1635db9bc25c2efaf75caf0a" })
 
 	-- Colorschemes
 	use({ "folke/tokyonight.nvim", commit = "8223c970677e4d88c9b6b6d81bda23daf11062bb" })
 	use("lunarvim/darkplus.nvim")
-  use("xiyaowong/nvim-transparent")
+	use("xiyaowong/nvim-transparent")
+	use("doums/darcula")
+	use("arcticicestudio/nord-vim")
+	use("morhetz/gruvbox")
+	use("sainnhe/gruvbox-material")
+	use("NLKNguyen/papercolor-theme")
+	use("gosukiwi/vim-atom-dark")
+	use({ "catppuccin/nvim", as = "catppuccin" })
 
--- Debugger
+	-- Debugger
 	use("mfussenegger/nvim-dap")
-  use("nvim-telescope/telescope-dap.nvim")
+	use("nvim-telescope/telescope-dap.nvim")
 	use("theHamsta/nvim-dap-virtual-text")
 	use("rcarriga/nvim-dap-ui")
-
 
 	-- cmp plugins
 	use({ "hrsh7th/nvim-cmp", commit = "df6734aa018d6feb4d76ba6bda94b1aeac2b378a" }) -- The completion plugin
@@ -88,8 +94,8 @@ return packer.startup(function(use)
 	use({ "williamboman/nvim-lsp-installer", commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" }) -- simple to use language server installer
 	use({ "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" }) -- for formatters and linters
 
-  -- JAVA
-  use("mfussenegger/nvim-jdtls")
+	-- JAVA
+	use("mfussenegger/nvim-jdtls")
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim", commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0" })
@@ -99,7 +105,7 @@ return packer.startup(function(use)
 		"nvim-treesitter/nvim-treesitter",
 		commit = "518e27589c0463af15463c9d675c65e464efc2fe",
 	})
-  -- Smooth scrolling
+	-- Smooth scrolling
 	use("psliwka/vim-smoothie")
 
 	-- Git

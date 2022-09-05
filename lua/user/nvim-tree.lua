@@ -66,3 +66,5 @@ nvim_tree.setup {
     },
   },
 }
+
+vim.cmd[[hi NvimTreeNormal guibg=NONE ctermbg=NONE]]
