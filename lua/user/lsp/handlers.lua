@@ -88,6 +88,7 @@ M.on_attach = function(client, bufnr)
 	end
 	if client.name == "pyright" then
 		client.resolved_capabilities.document_formatting = false
+    require('user.dap.dap-python')
 	end
 	if client.name == "sumneko_lua" then
 		client.resolved_capabilities.document_formatting = false

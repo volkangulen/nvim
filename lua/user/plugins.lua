@@ -59,10 +59,12 @@ return packer.startup(function(use)
 	use({ "goolord/alpha-nvim", commit = "ef27a59e5b4d7b1c2fe1950da3fe5b1c5f3b4c94" })
 	use({ "folke/which-key.nvim", commit = "f11260251ad942ba1635db9bc25c2efaf75caf0a" })
 
+  -- Transparency
+	use({ "xiyaowong/nvim-transparent", commit = "1a3d7d3b7670fecbbfddd3fc999ddea5862ac3c2" })
+
 	-- Colorschemes
 	use({ "folke/tokyonight.nvim", commit = "8223c970677e4d88c9b6b6d81bda23daf11062bb" })
 	use("lunarvim/darkplus.nvim")
-	use("xiyaowong/nvim-transparent")
 	use("doums/darcula")
 	use("arcticicestudio/nord-vim")
 	use("morhetz/gruvbox")
@@ -72,10 +74,11 @@ return packer.startup(function(use)
 	use({ "catppuccin/nvim", as = "catppuccin" })
 
 	-- Debugger
-	use("mfussenegger/nvim-dap")
-	use("nvim-telescope/telescope-dap.nvim")
-	use("theHamsta/nvim-dap-virtual-text")
-	use("rcarriga/nvim-dap-ui")
+	use({ "mfussenegger/nvim-dap", commit = "d9b315a81622457cddf6875c6ac7134baa9932ce" })
+	use({ "nvim-telescope/telescope-dap.nvim", commit = "b4134fff5cbaf3b876e6011212ed60646e56f060" })
+	use({ "theHamsta/nvim-dap-virtual-text", commit = "2971ce3e89b1711cc26e27f73d3f854b559a77d4" })
+	use({ "rcarriga/nvim-dap-ui", commit = "ce8894c586e904ce0d00fcae1a7124132810a206" })
+	use({ "mfussenegger/nvim-dap-python", commit = "358fb85b05b9c99546c0b37f5c5fb72548cffe3c" })
 
 	-- cmp plugins
 	use({ "hrsh7th/nvim-cmp", commit = "df6734aa018d6feb4d76ba6bda94b1aeac2b378a" }) -- The completion plugin
@@ -95,7 +98,7 @@ return packer.startup(function(use)
 	use({ "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" }) -- for formatters and linters
 
 	-- JAVA
-	use("mfussenegger/nvim-jdtls")
+	use({ "mfussenegger/nvim-jdtls", commit = "774a7714f9dcdfaa8d6d86831809ab941b2b7f26" })
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim", commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0" })
@@ -106,7 +109,7 @@ return packer.startup(function(use)
 		commit = "518e27589c0463af15463c9d675c65e464efc2fe",
 	})
 	-- Smooth scrolling
-	use("psliwka/vim-smoothie")
+	use({ "psliwka/vim-smoothie", commit = "df1e324e9f3395c630c1c523d0555a01d2eb1b7e" })
 
 	-- Git
 	use({ "lewis6991/gitsigns.nvim", commit = "c18e016864c92ecf9775abea1baaa161c28082c3" })

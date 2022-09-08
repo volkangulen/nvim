@@ -29,11 +29,20 @@ dap.configurations.javascript = {
 }
 dap.set_log_level("TRACE")
 dap.defaults.fallback.terminal_win_cmd = "80vsplit new"
+vim.highlight.create("DapBreakpoint", { ctermbg = 0, guifg = "#993939", guibg = "none" }, false)
+vim.highlight.create("DapLogPoint", { ctermbg = 0, guifg = "#61afef", guibg = "#31353f" }, false)
+vim.highlight.create("DapStopped", { ctermbg = 0, guifg = "#98c379", guibg = "#31353f" }, false)
 
-vim.fn.sign_define("DapBreakpointCondition", { text = "??", texthl = "", linehl = "", numhl = "" })
-vim.fn.sign_define("DapBreakpoint", { text = "??", texthl = "", linehl = "", numhl = "" })
-vim.fn.sign_define("DapBreakpointRejected", { text = "??", texthl = "", linehl = "", numhl = "" })
-vim.fn.sign_define("DapStopped", { text = "??", texthl = "", linehl = "visual", numhl = "" })
+vim.fn.sign_define(
+	"DapBreakpointCondition",
+	{ text = "🛑", texthl = "DapBreakpoint", linehl = "DapBreakpoint", numhl = "DapBreakpoint" }
+)
+vim.fn.sign_define(
+	"DapBreakpoint",
+	{ text = "•", texthl = "DapBreakpoint", linehl = "DapBreakpoint", numhl = "DapBreakpoint" }
+)
+vim.fn.sign_define("DapBreakpointRejected", { text = "•", texthl = "blue", linehl = "", numhl = "" })
+vim.fn.sign_define("DapStopped", { text = "•", texthl = "DapStopped", linehl = "DapStopped", numhl = "DapStopped" })
 
 local function debugJest(testName, filename)
 	print("starting " .. testName .. " in " .. filename)

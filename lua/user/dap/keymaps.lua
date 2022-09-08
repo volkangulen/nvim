@@ -18,6 +18,7 @@ keymap("n", "<leader>dA", ':lua require"user.dap.dap".attachToRemote()<CR>', opt
 keymap("n", "<leader>di", ':lua require"dap.ui.widgets".hover()<CR>', opts)
 keymap("v", "<leader>di", ':lua require"dap.ui.variables".visual_hover()<CR>', opts)
 keymap("n", "<leader>d/", ':lua local widgets=require"dap.ui.widgets";widgets.centered_float(widgets.scopes)<CR>', opts)
+keymap("n", "<leader>dl", ':lua require"dap.ext.vscode".load_launchjs()<CR>', opts)
 
 -- nvim-telescope/telescope-dap.nvim
 keymap("n", "<leader>ds", ":Telescope dap frames<CR>", opts)
