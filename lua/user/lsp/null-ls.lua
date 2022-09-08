@@ -13,32 +13,23 @@ null_ls.setup({
 	sources = {
 		formatting.prettier.with({
 			extra_args = { "--config-path", vim.fn.getcwd() .. "/.prettierrc" },
-			-- extra_args = {
-			-- 	"--single-quote",
-			-- 	-- "--jsx-single-quote",
-			-- 	"--tab-width 2",
-			-- 	"--print-width 100",
-			-- 	"--trailing-comma all",
-			-- },
 		}),
 		formatting.black.with({
-			extra_args = { "--fast", "--config-path", vim.fn.getcwd() .. "/.pyproject.toml" },
+			extra_args = { "--fast" },
 		}),
 		formatting.stylua,
 		formatting.prettier,
 		formatting.google_java_format,
-		diagnostics.flake8.with({
-			extra_args = { "--config-path", vim.fn.getcwd() .. "/.flake8" },
-		}),
+		diagnostics.flake8,
 	},
-	-- on_attach = function(client)
-	-- 	if client.resolved_capabilities.document_formatting then
-	-- 		vim.cmd([[
-	--            augroup LspFormatting
-	--                autocmd! * <buffer>
-	--                autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
-	--            augroup END
-	--            ]])
-	-- 	end
-	-- end,
+	on_attach = function(client)
+		if client.resolved_capabilities.document_formatting then
+			vim.cmd([[
+	           augroup LspFormatting
+	               autocmd! * <buffer>
+	               autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+	           augroup END
+	           ]])
+		end
+	end,
 })
