@@ -1,5 +1,6 @@
 local status_ok, dap_python = pcall(require, "dap-python")
 if not status_ok then
+	print("here")
 	return
 end
 
@@ -17,3 +18,4 @@ local function getPythonPath()
 	end
 end
 dap_python.setup(getPythonPath())
+dap_python.test_runner = "pytest"

@@ -74,11 +74,11 @@ return packer.startup(function(use)
 	use({ "catppuccin/nvim", as = "catppuccin" })
 
 	-- Debugger
-	use({ "mfussenegger/nvim-dap", commit = "d9b315a81622457cddf6875c6ac7134baa9932ce" })
+	use({ "mfussenegger/nvim-dap", commit = "61643680dcb771a29073cd432894e2f81a7c2ae3" })
 	use({ "nvim-telescope/telescope-dap.nvim", commit = "b4134fff5cbaf3b876e6011212ed60646e56f060" })
 	use({ "theHamsta/nvim-dap-virtual-text", commit = "2971ce3e89b1711cc26e27f73d3f854b559a77d4" })
-	use({ "rcarriga/nvim-dap-ui", commit = "ce8894c586e904ce0d00fcae1a7124132810a206" })
-	use({ "mfussenegger/nvim-dap-python", commit = "358fb85b05b9c99546c0b37f5c5fb72548cffe3c" })
+	use({ "rcarriga/nvim-dap-ui", commit = "0f385f7f5268f408a546772c049271121b0d71c9" })
+	use({ "mfussenegger/nvim-dap-python", commit = "27a0eff2bd3114269bb010d895b179e667e712bd" })
 
 	-- cmp plugins
 	use({ "hrsh7th/nvim-cmp", commit = "9bb8ee6e2d6ab3c8cc53323b79f05886bc722faa" }) -- The completion plugin
@@ -96,7 +96,7 @@ return packer.startup(function(use)
 	use({ "neovim/nvim-lspconfig", commit = "f11fdff7e8b5b415e5ef1837bdcdd37ea6764dda" }) -- enable LSP
 	use({ "williamboman/mason.nvim", commit = "c2002d7a6b5a72ba02388548cfaf420b864fbc12" }) -- simple to use language server installer
 	use({ "williamboman/mason-lspconfig.nvim", commit = "0051870dd728f4988110a1b2d47f4a4510213e31" })
-	use({ "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" }) -- for formatters and linters
+	use({ "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450" }) -- for formatters and linters
 
 	use({ "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" })
 
