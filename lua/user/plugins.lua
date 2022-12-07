@@ -72,6 +72,7 @@ return packer.startup(function(use)
 	use("NLKNguyen/papercolor-theme")
 	use("gosukiwi/vim-atom-dark")
 	use({ "catppuccin/nvim", as = "catppuccin" })
+	use({ "tomasiser/vim-code-dark", commit = "f002d6d256a11c14a9de40c45a8ecb75b2292f8a" })
 
 	-- Debugger
 	use({ "mfussenegger/nvim-dap", commit = "61643680dcb771a29073cd432894e2f81a7c2ae3" })
@@ -94,9 +95,10 @@ return packer.startup(function(use)
 
 	-- LSP
 	use({ "neovim/nvim-lspconfig", commit = "f11fdff7e8b5b415e5ef1837bdcdd37ea6764dda" }) -- enable LSP
-	use({ "williamboman/mason.nvim", commit = "c2002d7a6b5a72ba02388548cfaf420b864fbc12" }) -- simple to use language server installer
-	use({ "williamboman/mason-lspconfig.nvim", commit = "0051870dd728f4988110a1b2d47f4a4510213e31" })
+	use({ "williamboman/mason.nvim", commit = "45714c54fb61a61c74724f64ca3f728c30ae01d2" }) -- simple to use language server installer
+	use({ "williamboman/mason-lspconfig.nvim", commit = "a910b4d50f7a32d2f9057d636418a16843094b7c" })
 	use({ "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450" }) -- for formatters and linters
+	use({ "dccsillag/magma-nvim", run = ":UpdateRemotePlugins" }) -- You can run blocks of code like jupyter notebook.
 
 	use({ "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" })
 
@@ -118,7 +120,7 @@ return packer.startup(function(use)
 	use({ "psliwka/vim-smoothie", commit = "df1e324e9f3395c630c1c523d0555a01d2eb1b7e" })
 
 	-- Git
-	use({ "lewis6991/gitsigns.nvim", commit = "2c6f96dda47e55fa07052ce2e2141e8367cbaaf2" })
+	use({ "lewis6991/gitsigns.nvim", commit = "2b4fc5e2ae8b546b1a2b4ab1bbc4283248e52a17" })
 
 	use({ "tpope/vim-surround", commit = "3d188ed2113431cf8dac77be61b842acb64433d9" })
 

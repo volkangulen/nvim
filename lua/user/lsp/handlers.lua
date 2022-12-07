@@ -85,19 +85,8 @@ M.on_attach = function(client, bufnr)
 	end
 	if client.name == "jsonls" then
 		client.server_capabilities.documentFormattingProvider = false
-		require("user.dap.dap-python")
 	end
 	if client.name == "sumneko_lua" then
-		client.server_capabilities.documentFormattingProvider = false
-	end
-	if client.name == "jdtls" then
-		client.server_capabilities.documentFormattingProvider = false
-	end
-	if client.name == "jdt.ls" then
-		if JAVA_DAP_ACTIVE then
-			require("jdtls").setup_dap({ hotcodereplace = "auto" })
-			require("jdtls.dap").setup_dap_main_class_configs()
-		end
 		client.server_capabilities.documentFormattingProvider = false
 	end
 	lsp_keymaps(bufnr)

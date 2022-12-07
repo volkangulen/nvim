@@ -9,6 +9,7 @@ local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup({
+
 	debug = false,
 	sources = {
 		formatting.prettier.with({
@@ -20,7 +21,9 @@ null_ls.setup({
 		formatting.stylua,
 		formatting.prettier,
 		formatting.google_java_format,
-		diagnostics.flake8,
+		diagnostics.flake8.with({
+			prefer_local = ".flake8",
+		}),
 	},
 	on_attach = function(client)
 		if client.server_capabilities.documentFormattingProvider then

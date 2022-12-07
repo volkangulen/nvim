@@ -2,12 +2,31 @@ local status_ok, dap = pcall(require, "dap")
 if not status_ok then
 	return
 end
+-- local utils_ok, utils = pcall(require, "user.dap.utils")
+-- if not utils_ok then
+-- 	return
+-- end
 
 dap.adapters.node2 = {
 	type = "executable",
 	command = "node",
 	args = { "/opt/vscode-node-debug2/out/src/nodeDebug.js" },
 }
+-- dap.adapters.python = {
+-- 	type = "executable",
+-- 	command = utils.getPythonPath(),
+-- 	args = { "-m", "debugpy.adapter" },
+-- }
+-- dap.configurations.python = {
+-- 	{
+-- 		type = "python",
+-- 		request = "launch",
+-- 		name = "Launch file",
+-- 		program = "${file}",
+-- 		pythonPath = utils.getPythonPath(),
+-- 		console = "integratedTerminal",
+-- 	},
+-- }
 dap.configurations.javascript = {
 	{
 		name = "Launch",
@@ -71,16 +90,16 @@ local function attach()
 	})
 end
 
-local function attachToRemote()
-	print("attaching")
+local function attachToRemote(port)
+	print("attaching to remote " .. port)
 	dap.run({
 		type = "node2",
 		request = "attach",
 		address = "127.0.0.1",
-		port = 9229,
+		port = port,
 		localRoot = vim.fn.getcwd(),
-		-- remoteRoot = "/home/vcap/app",
-		remoteRoot = "${cwd}/src/main.ts",
+		-- -- remoteRoot = "/home/vcap/app",
+		remoteRoot = vim.fn.getcwd(),
 		sourceMaps = true,
 		protocol = "inspector",
 		skipFiles = { "<node_internals>/**/*.js" },

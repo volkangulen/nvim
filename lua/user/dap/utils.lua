@@ -1,8 +1,3 @@
-local status_ok, dap_python = pcall(require, "dap-python")
-if not status_ok then
-	return
-end
-
 local function getPythonPath()
 	-- debugpy supports launching an application with a different interpreter then the one used to launch debugpy itself.
 	-- The code below looks for a `venv` or `.venv` folder in the current directly and uses the python within.
@@ -16,5 +11,7 @@ local function getPythonPath()
 		return "python3"
 	end
 end
-dap_python.setup(getPythonPath())
-dap_python.test_runner = "pytest"
+
+return {
+	getPythonPath = getPythonPath,
+}
