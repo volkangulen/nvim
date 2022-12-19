@@ -102,6 +102,13 @@ return packer.startup(function(use)
 
 	use({ "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" })
 
+	-- Poetry
+
+	use({ "petobens/poet-v", commit = "cd4d2253f45cca679b88bf099698afb34855e84f" })
+
+	-- --NVM
+	-- use({ "marene/nvm.vim", commit = "bb3b524e1ef09977d7ba1a5870403a8b987f0ad8" })
+
 	-- JAVA
 	use({ "mfussenegger/nvim-jdtls", commit = "774a7714f9dcdfaa8d6d86831809ab941b2b7f26" })
 
@@ -111,10 +118,10 @@ return packer.startup(function(use)
 	-- Treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
-		run = function()
-			require("nvim-treesitter.install").update({ with_sync = true })
-		end,
-		branch = "v0.8.0",
+		commit = "d31c71c959348b7b15f7e69608a47aea05ed7bc6",
+		-- run = function()
+		-- 	require("nvim-treesitter.install").update({ with_sync = true })
+		-- end,
 	})
 	-- Smooth scrolling
 	use({ "psliwka/vim-smoothie", commit = "df1e324e9f3395c630c1c523d0555a01d2eb1b7e" })
@@ -123,6 +130,8 @@ return packer.startup(function(use)
 	use({ "lewis6991/gitsigns.nvim", commit = "2b4fc5e2ae8b546b1a2b4ab1bbc4283248e52a17" })
 
 	use({ "tpope/vim-surround", commit = "3d188ed2113431cf8dac77be61b842acb64433d9" })
+
+	use({ "hashivim/vim-terraform", commit = "f5d87cf6eebcd017a78bd6fd04b04c38a74920b4" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

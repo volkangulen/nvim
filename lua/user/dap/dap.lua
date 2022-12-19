@@ -12,21 +12,6 @@ dap.adapters.node2 = {
 	command = "node",
 	args = { "/opt/vscode-node-debug2/out/src/nodeDebug.js" },
 }
--- dap.adapters.python = {
--- 	type = "executable",
--- 	command = utils.getPythonPath(),
--- 	args = { "-m", "debugpy.adapter" },
--- }
--- dap.configurations.python = {
--- 	{
--- 		type = "python",
--- 		request = "launch",
--- 		name = "Launch file",
--- 		program = "${file}",
--- 		pythonPath = utils.getPythonPath(),
--- 		console = "integratedTerminal",
--- 	},
--- }
 dap.configurations.javascript = {
 	{
 		name = "Launch",
